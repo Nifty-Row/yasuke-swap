@@ -1,0 +1,80 @@
+<!--
+  Generated template for the SendBit page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{pageTitle}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card style="background:white; border-radius: 1rem;">
+    <ion-card-content>
+      <p style="margin-top: 2rem; margin-left: 1rem; margin-right: 1rem; margin-bottom: 2rem;">{{sendBitWarningText}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="background: white; border-radius: 1rem;">
+    <ion-card-content>
+      <button ion-button icon-left clear small (click)="loadRate()" item-left>
+        <ion-icon name="refresh-circle" color="dark"></ion-icon>
+        <span>1 {{btcText}} = {{btcToNgn | number: '.3-3'}} NGN</span>
+      </button>      
+      <ion-item>
+        <ion-label>Block Fees (Transaction Speed)</ion-label>
+        <ion-range [(ngModel)]="sliderValue" min="1" max="10">
+          <ion-icon range-left small name="remove">&nbsp;Slow&nbsp;</ion-icon>
+          <ion-icon range-right name="add">&nbsp;Fast&nbsp;</ion-icon>
+        </ion-range>
+      </ion-item>
+      <form [formGroup]="sendBitForm">
+        <ion-item>
+          <ion-label floating>{{amountToSendText}} ({{btcText}})</ion-label>
+          <ion-input formControlName="amount" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>{{bitcoinAddressText}}</ion-label>
+          <ion-input formControlName="networkAddress" type="text">{{toBitcoinAddress}}</ion-input>
+        </ion-item>
+        <ion-item>
+          <button ion-button full medium color="orange" (click)="scanCode();" icon-right>{{scanCodeText}}
+            <ion-icon name="barcode"></ion-icon></button>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Your Password</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <button ion-button full medium color="orange" (click)="howMuchCanISend();"
+            icon-right>{{howMuchCanISendText}}</button>
+        </ion-item>
+      </form>
+      <p style="margin-top: 2rem; margin-left: 1rem; margin-right: 1rem; margin-bottom: 2rem;">{{hmcisWarning}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="background: white; border-radius: 1rem;">
+    <ion-card-content>
+      <ion-item class="center">
+        <ion-buttons class="bordered">
+          <ion-row>
+            <ion-col col-9>
+              <button [disabled]="disableButton" ion-button medium full color="orange" (click)="sendBit();" icon-right>Xend
+                <ion-icon name="send"></ion-icon></button>
+            </ion-col>
+            <ion-col col-3>
+              <button [disabled]="disableButton" ion-button medium round color="fingerprint"
+                (click)="sendBitFingerprint();" icon-only>
+                <ion-icon name="finger-print"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-buttons>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

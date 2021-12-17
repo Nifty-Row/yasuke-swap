@@ -1,0 +1,77 @@
+<!--
+  Generated template for the Settings page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{pageTitle}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card style="background:white; border-radius: 1rem;">
+        <ion-card-header>{{showMnemonicText}}</ion-card-header>
+        <ion-card-content>
+            <form [formGroup]="showMnemonicForm">
+                <ion-item>
+                    <ion-label floating>{{passwordText}}</ion-label>
+                    <ion-input type="password" formControlName="password"></ion-input>
+                </ion-item>
+                <ion-buttons class="bordered" style="margin-bottom: 5rem; width: 70%; display: flex; margin-left: 4rem;">
+                    <button ion-button full round color="orange" (click)="showMnemonic();" icon-right>{{revealText}}
+                        <ion-icon name="log-out"></ion-icon>
+                    </button>
+                </ion-buttons>
+            </form>
+        </ion-card-content>
+    </ion-card>
+    <div>
+        <ion-grid>
+            <button color="orange" ion-button icon-right full round (click)="showMyInfo();" icon-right>My Info
+                <ion-icon name="person"></ion-icon>
+            </button>
+        </ion-grid>
+    </div>
+    <div>
+        <ion-grid>
+            <ion-list>
+                <ion-item>
+                  <ion-label>Enable 2 Factor Authentication</ion-label>
+                  <ion-checkbox [(ngModel)]="enable2fa" (ionChange)="enable2FA()"></ion-checkbox>
+                </ion-item>
+              </ion-list>
+        </ion-grid>
+    </div>
+
+    <!-- <ion-card *ngIf="canSwitchWallet">
+        <ion-card-content>
+            <button color="xend" ion-button icon-right full round (click)="switchWallet();">Switch Wallet
+                <ion-icon name="switch"></ion-icon>
+            </button>
+        </ion-card-content>
+    </ion-card> -->
+
+    <!-- <ion-card *ngIf="!isBeneficiary">
+        <ion-card-header>Become a Beneficiary</ion-card-header>
+        <ion-card-content>
+            <p>
+                If you accept to be a beneficiary, Donors will be able to view all your information.
+            </p>
+            <button ion-button full round color="dark" (click)="becomeBeneficiary();" icon-right>Become A Beneficiary
+                <ion-icon name="people"></ion-icon>
+            </button>
+        </ion-card-content>
+    </ion-card> -->
+
+    <div *ngIf="canLogout">
+<ion-grid>
+    <button ion-button full round color="fingerprint" (click)="logout();" icon-right>{{logoutText}}
+        <ion-icon name="log-out"></ion-icon>
+    </button>
+</ion-grid>
+    </div>
+</ion-content>

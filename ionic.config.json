@@ -1,0 +1,7 @@
+{
+  "name": "XendBitV3",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

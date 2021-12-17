@@ -1,0 +1,17 @@
+page-home {
+    ion-card.card {
+        border-radius: 10px;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .big {
+        font-size: 13px !important;
+    }
+}

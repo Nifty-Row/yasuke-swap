@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{pageTitle}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card style="background: white;">
+    <ion-card-content>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="https://xendbit.com/coins/{{wtv}}.png">
+        </ion-avatar>
+        <ion-row style="font-size: 14px;">
+            <ion-col>Balance: {{confirmedAccountBalance | number: '.3-5'}} {{btcText}}</ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>Escrow: {{escrow | number: '.3-5'}} {{btcText}}</ion-col>
+          </ion-row>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="background: white;">
+    <ion-card-header>
+      <h3>{{yourBTCWalletText}}</h3>
+    </ion-card-header>
+    <ion-card-content>
+      <button ion-button icon-left clear big (click)="copyBitcoinAddress();" class="big">
+        {{networkAddress}}
+      </button>
+      <ngx-qrcode (click)="copyBitcoinAddress();" [qrc-element-type]="qrType" [qrc-value]="qrValue"
+        [qrc-class]="qrCssClass">
+      </ngx-qrcode>
+      <ion-row>
+        <ion-col col-4>
+          <button [disabled]="!hasNgnPair" color="orange" ion-button full medium (click)="exchange('Sell');"
+            icon-right>{{cryptoSellOrderText}}
+            <ion-icon name="fastforward"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-4>
+          <button [disabled]="!hasNgnPair" color="orange" ion-button full medium (click)="exchange('Buy');"
+            icon-right>{{cryptoBuyOrderText}}
+            <ion-icon name="rewind"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-4>
+          <button color="orange" ion-button full medium (click)="exchange('Send');"
+            icon-right>Send
+            <ion-icon name="send"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <div id="container" style="display: block;"></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

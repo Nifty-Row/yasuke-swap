@@ -1,0 +1,69 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+        <div class="Aligner-item Aligner-item--top"></div>
+        <img src="assets/img/xendbit2.png">
+        <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+</div>
+
+<ion-content padding class="contentWork">
+    <ion-card style="margin-top: 14rem; opacity: 93%;">
+        <ion-card-header>
+            XendBit Login
+        </ion-card-header>
+        <ion-card-content>
+            <form [formGroup]="loginForm" style="background: none; opacity: 100%;">
+                <ion-list no-line>
+                    <ion-item style="font-size: 14px;">
+                        <ion-label stacked>{{emailAddressText}}</ion-label>
+                        <ion-input type="text" formControlName="email" class="lined-input"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label stacked>{{passwordText}}</ion-label>
+                        <ion-input type="password" formControlName="password" class="lined-input"></ion-input>
+                        <button small ion-button clear full color="xend"
+                            (click)="register();">{{forgotPasswordText}}</button>
+                    </ion-item>
+                    <ion-item>
+                        <ion-row>
+                            <ion-col col-9>
+                                <button style="opacity: 90% !important; color: purple;" ion-button full medium color="orange" (click)="login();"
+                                    icon-right>{{loginText}}</button>
+                            </ion-col>
+                            <ion-col col-3>
+                                <button ion-button full medium round color="xend" (click)="loginWithPrint();"
+                                    *ngIf="useFingerprint === true" icon-only>
+                                    <ion-icon name="finger-print" style="color: orange;"></ion-icon>
+                                </button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-item>
+                    <ion-item>
+                        <button class="no-border" small ion-button clear color="gray" (click)="resetPassword();">Forgot
+                            Password? Click Here</button>
+                    </ion-item>
+                    <ion-item style="margin-left: 7rem !important;">
+                        <button class="no-border" small ion-button clear color="xend"  (click)="register();" icon-right>Register</button> 
+                        <button class="no-border" small ion-button clear color="xend"  (click)="login();" icon-right>Recover</button> 
+                    </ion-item>
+                </ion-list>
+               
+                <!--<div id="container">
+                    <ion-card id="main_image">
+            
+                    </ion-card>
+                    <div id="buttons_login" style="margin-top: 6rem;">
+                        <div>
+             <button style="margin-left: 0rem; width: 90%; border-radius: 0px; opacity: 80%;" ion-button medium color="orange" (click)="register();" icon-right>Register</button> 
+                        </div>
+                        <div>
+                            <button style="margin-left: 0rem; width: 90%; border-radius: 0px; opacity: 80%;"  ion-button medium color="white" (click)="login();" icon-left>Recover</button>
+                        </div>
+                    </div>-->
+    
+            </form>
+
+        </ion-card-content>
+    </ion-card>
+   
+</ion-content>

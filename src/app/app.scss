@@ -1,0 +1,269 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+ion-label {
+    font-weight: bold !important;
+}
+
+.toolbar-title {
+    //width: 250px;
+    //text-align: center;
+    color: white;
+}
+
+.select {
+    font-size: 12px !important;
+}
+
+h1 {
+    color: lightseagreen;
+}
+
+.white {
+    color: black;
+    font-weight: bolder;
+}
+
+ion-col {
+    color: black;
+    font-weight: bold;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0 !important;
+}
+
+.card-content {
+    padding: 0 !important;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+ion-content {
+    background: radial-gradient(103.44% 103.44% at 50% 90.63%, rgba(141, 55, 239, 0.7) 0%, rgba(41, 64, 179, 0.7) 100%);
+    //background-position: center;
+    //background-repeat: no-repeat;
+    //background-size: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.item {
+    border-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    color: lightseagreen;
+    font-weight: bold;
+    text-transform: none;
+}
+
+.col {
+    color: black ;
+}
+
+ion-item {
+    text-align: center !important;
+}
+
+.tab-button-text {
+    color: white !important;
+    font-weight: bold;
+}
+
+.tab-button-icon {
+    color: white !important;
+    font-weight: bold;
+}
+
+ion-icon {
+    font-size: 24px;
+}
+
+.small {
+    font-size: 14px;
+}
+
+.title-x {
+    font-size: 1.2em;
+}
+
+.big {
+    font-size: 5em;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.bigger {
+    font-size: 5.5em;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: yellow;
+}
+
+.label {
+    font-size: 15px;
+    text-align: left;
+    color:  darkslategray;
+}
+
+p {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.no-border {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.button {
+    text-transform: none;
+    border-radius: 10px;
+}
+
+.center {
+    padding-right: 20px;
+}
+
+.smallest {
+    font-size: 11px;
+}
+
+.very_small {
+    font-size: 12px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.history {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.danger {
+    color: red;
+}
+
+.green {
+    color: lightseagreen;
+}
+
+.blue {
+    color: #387ef5;
+}
+
+.bitcoin_address {
+    font-size: 0.7em;
+    color: black;
+    font-weight: bold; //font-style: italic;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.card {
+    box-shadow: 0 1px 2px rgba(0, 102, 0, 0.8);
+}
+
+.tabbar {
+    background: transparent !important;
+    opacity: 100%;
+}
+
+.scroll-content {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+textarea.text-input {
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    background: none !important;
+}
+
+.text-input {
+    background: none !important;
+    color: black; //border: inset;
+    font-size: 1em;
+    text-align: left;
+    border-bottom: solid thin blue !important;
+}
+
+.toolbar-background {
+    background: radial-gradient(103.44% 103.44% at 50% 90.63%, rgba(141, 55, 239, 0.7) 0%, rgba(41, 64, 179, 0.7) 100%);
+    opacity: 100%;
+}
+
+.overlay {
+    border-color: rgba(0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.alert-button {
+    text-transform: none !important;
+}
+
+.bar-button-default {
+    color: white;
+}
+
+.select-text {
+    text-align: left;
+}
+
+.fab-image {
+    right: calc(env(safe-area-inset-right) + 10px);
+    bottom: 10px;
+    width: 100px;
+    position: absolute;
+}
+
+ion-item-group {
+    height: 100px !important;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+    border-color: #488aff;
+    opacity: 0.5;
+}
+
+.segment-md .segment-button {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 0;
+    height: 4.2rem;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 4rem;
+    text-transform: uppercase;
+    color: #488aff;
+    background-color: transparent;
+    opacity: 2;
+    -webkit-transition: 100ms all linear;
+    transition: 100ms all linear;
+    padding: 0 6px;
+}
