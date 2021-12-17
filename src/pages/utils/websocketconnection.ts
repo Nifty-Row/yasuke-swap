@@ -35,7 +35,7 @@ export class __WSConnection {
             app.localNotifications.hasPermission().then((value) => {
               app.localNotifications.schedule({
                 id: 1,
-                title: "Xendbit: Start Trade",
+                title: "yasuke: Start Trade",
                 text: message['message'],
                 data: { secret: "key" }
               });

@@ -2,7 +2,7 @@
 RC="`cat rc_test.txt`"
 MAJOR_VERSION="`cat major_version.txt`"
 MINOR_VERSION="`cat minor_version.txt`"
-BASE_DIR=/Users/aardvocate/src/XendBitV3/mobile/XendBit
+BASE_DIR=/Users/aardvocate/src/yasukeV3/mobile/yasuke
 
 RC=$((RC + 1))
 #MAJOR_VERSION=$((MAJOR_VERSION + 1))
@@ -40,7 +40,7 @@ import { HDNode } from "bitcoinjs-lib";
 import { mnemonicToSeed } from "bip39";
 
 export class Constants {
-static TOMCAT_URL = "https://lb.xendbit.com";' > /tmp/temp
+static TOMCAT_URL = "https://lb.yasuke.com";' > /tmp/temp
 echo "static APP_VERSION = \"$VERSION\"" >> /tmp/temp
 echo "static ENABLE_GUEST = false;" >> /tmp/temp
 echo "static NOTIFICATION_SOCKET_URL = \"ws://192.250.236.180:8080/notify/websocket\";" >> /tmp/temp
@@ -54,10 +54,10 @@ cd $BASE_DIR/platforms/android
 ./gradlew clean
 ./gradlew assemble
 cd $BASE_DIR
-jarsigner -storepass @bsolute -tsa http://timestamp.digicert.com -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore XendBit.keystore $BASE_DIR/platforms/android/build/outputs/apk/armv7/release/android-armv7-release-unsigned.apk XendBit
-/Users/aardvocate/Library/Android/sdk/build-tools/24.0.2/zipalign -v 4  $BASE_DIR/platforms/android/build/outputs/apk/armv7/release/android-armv7-release-unsigned.apk XendBit.apk
+jarsigner -storepass @bsolute -tsa http://timestamp.digicert.com -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore yasuke.keystore $BASE_DIR/platforms/android/build/outputs/apk/armv7/release/android-armv7-release-unsigned.apk yasuke
+/Users/aardvocate/Library/Android/sdk/build-tools/24.0.2/zipalign -v 4  $BASE_DIR/platforms/android/build/outputs/apk/armv7/release/android-armv7-release-unsigned.apk yasuke.apk
 
-mv XendBit.apk XendBitTest.$VERSION.apk
+mv yasuke.apk yasukeTest.$VERSION.apk
 #reverse the process above
 
 cd $BASE_DIR/src/pages/utils/
@@ -65,5 +65,5 @@ mv $BAK_FILE $CONSTANTS_FILE
 
 cd $BASE_DIR
 
-scp XendBitTest.$VERSION.apk xend@xendbit.com:/var/www/html/releases/
+scp yasukeTest.$VERSION.apk xend@yasuke.com:/var/www/html/releases/
 echo "Done"

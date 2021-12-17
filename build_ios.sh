@@ -2,7 +2,7 @@
 RC="`cat rc.txt`"
 MAJOR_VERSION="`cat major_version.txt`"
 MINOR_VERSION="`cat minor_version.txt`"
-BASE_DIR=/Users/aardvocate/src/XendBitV3/mobile/XendBit
+BASE_DIR=/Users/aardvocate/src/yasukeV3/mobile/yasuke
 
 #MAJOR_VERSION=$((MAJOR_VERSION + 1))
 #MINOR_VERSION=$((MINOR_VERSION + 1))
@@ -39,10 +39,10 @@ import { HDNode } from "bitcoinjs-lib";
 import { mnemonicToSeed } from "bip39";
 
 export class Constants {
-static TOMCAT_URL = "https://lb.xendbit.net";' > /tmp/temp
+static TOMCAT_URL = "https://lb.yasuke.net";' > /tmp/temp
 echo "static APP_VERSION = \"$VERSION\"" >> /tmp/temp
 echo "static ENABLE_GUEST = false;" >> /tmp/temp
-echo "static NOTIFICATION_SOCKET_URL = \"ws://ethereum.xendbit.net:8080/notify/websocket\";" >> /tmp/temp
+echo "static NOTIFICATION_SOCKET_URL = \"ws://ethereum.yasuke.net:8080/notify/websocket\";" >> /tmp/temp
 
 cat /tmp/temp | cat - $WORKING_FILE > temp && mv temp $WORKING_FILE
 mv $WORKING_FILE $CONSTANTS_FILE

@@ -3,7 +3,7 @@ rm -rf *.apk
 RC="`cat rc.txt`"
 MAJOR_VERSION="`cat major_version.txt`"
 MINOR_VERSION="`cat minor_version.txt`"
-BASE_DIR=/Users/aardvocate/src/XendBitIonic
+BASE_DIR=/Users/aardvocate/src/yasukeIonic
 echo $RC
 if [ $1 == "yes" ]
 then
@@ -40,7 +40,7 @@ import { LocalProps } from "./localprops";
 import { Wallet, Fees } from "./wallet";
 
 export class Constants {
-static TOMCAT_URL = "https://xendfilb.xendbit.net";' > /tmp/temp
+static TOMCAT_URL = "https://xendfilb.yasuke.net";' > /tmp/temp
 echo "static APP_VERSION = \"$VERSION\"" >> /tmp/temp
 echo "static ENABLE_GUEST = false;" >> /tmp/temp
 cat /tmp/temp | cat - $WORKING_FILE > temp && mv temp $WORKING_FILE
@@ -53,10 +53,10 @@ cd $BASE_DIR/platforms/android
 ./gradlew clean
 ./gradlew assemble
 cd $BASE_DIR
-jarsigner -storepass @bsolute -tsa http://timestamp.digicert.com -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore XendBit.keystore $BASE_DIR/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk XendBit
-/Users/aardvocate/Library/Android/sdk/build-tools/24.0.2/zipalign -v 4  $BASE_DIR/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk XendBit.apk
+jarsigner -storepass @bsolute -tsa http://timestamp.digicert.com -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore yasuke.keystore $BASE_DIR/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk yasuke
+/Users/aardvocate/Library/Android/sdk/build-tools/24.0.2/zipalign -v 4  $BASE_DIR/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk yasuke.apk
 
-mv XendBit.apk XendFi.$VERSION.apk
+mv yasuke.apk XendFi.$VERSION.apk
 #reverse the process above
 
 cd $BASE_DIR/src/pages/utils/

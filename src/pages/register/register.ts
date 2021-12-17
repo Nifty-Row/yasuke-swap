@@ -282,7 +282,7 @@ export class RegisterPage {
     let referralCode = rf.referralCode;
 
     if (referralCode === undefined || referralCode === null || referralCode === '') {
-      referralCode = 'XENDBIT';
+      referralCode = 'yasuke';
     }
 
     Constants.registrationData['email'] = rf.email;

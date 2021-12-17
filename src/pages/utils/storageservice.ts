@@ -66,7 +66,7 @@ export class StorageService {
         this.ns.clear();
         this.data = { dummy: 1 };
         this.ns.set("store", this.data).then(() => {
-            console.log("Xendbit: Was cleared.");
+            console.log("yasuke: Was cleared.");
         });
     }
 }
